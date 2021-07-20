@@ -5,11 +5,10 @@ import path from "path";
 
 const app = express();
 dotenv.config();
-
 const port = process.env.PORT || 5000;
 const dir_name = process.env.DIRECTORY_NAME || "/";
-app.use(express.json());
 
+app.use(express.json());
 app.get("/", (req, res) => {
   const files = readdirSync(dir_name);
   res.write(`<html><head>`);
@@ -48,4 +47,5 @@ app.get("/", (req, res) => {
   });
   res.end(`</body></html>`);
 });
+
 app.listen(port, () => console.log(`Server started at ${port}`));
