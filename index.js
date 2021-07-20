@@ -47,5 +47,7 @@ app.get("/", (req, res) => {
   });
   res.end(`</body></html>`);
 });
-
+app.get("/users", (req, res) => {
+  res.send("Welcome user");
+});
 app.listen(port, () => console.log(`Server started at ${port}`));
